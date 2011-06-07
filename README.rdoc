@@ -2,6 +2,40 @@
 
 This is a responds to parent plugin that is compatible with rails 2 and rails 3. It is based off the original work by Sean Treadway and has updates from Nicolas Papon. This plugin is available as a ruby gem to aid plugins and applications using bundler to easily resolve dependency issues.
 
+== Example
+
+Controller:
+
+  class Test < ActionController::Base
+    def main
+    end
+
+    def form_action
+      # Do stuff with params[:uploaded_file]
+
+      responds_to_parent do
+        render :update do |page|
+          page << "alert($('stuff').innerHTML)"
+        end
+      end
+    end
+  end
+
+main.html.erb:
+
+  <html>
+    <body>
+      <div id="stuff">Here is some stuff</div>
+
+      <form target="frame" action="form_action">
+        <input type="file" name="uploaded_file"/>
+        <input type="submit"/>
+      </form>
+
+      <iframe id='frame' name="frame"></iframe>
+    </body>
+  </html>
+
 === Original sources
 
 * http://code.google.com/p/responds-to-parent/
