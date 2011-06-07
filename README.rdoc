@@ -1,0 +1,8 @@
+== Rails Responds To Parent plugin
+
+This is a responds to parent plugin that is compatible with rails 2 and rails 3. It is based off the original work by Sean Treadway and has updates from Nicolas Papon. This plugin is available as a ruby gem to aid plugins and applications using bundler to easily resolve dependency issues.
+
+=== Original sources
+
+* http://code.google.com/p/responds-to-parent/
+* https://github.com/itkin/respond_to_parent
